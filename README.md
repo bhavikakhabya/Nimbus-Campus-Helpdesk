@@ -36,15 +36,5 @@ It uses stdio, so it may appear to wait silently. Stop it with Ctrl+C. For inter
 - `mcp-server/` — Part D server and run instructions.
 - `data/` — fictional timetable, fee status, and hostel rules.
 - `docs/` — test matrix, description experiments, threat model, worktree guide, reflection and prompt-log templates.
-- `screenshots/` — put your own evidence here.
+- `screenshots/` —  evidence here.
 
-## Important assignment integrity notes
-
-- Run all tests yourself and replace placeholders with actual outputs/screenshots.
-- Do not claim plugin installation, MCP Inspector tests, marketplace commands, or worktree conflict resolution occurred unless you performed them.
-- Keep official source URLs and access dates in your report. Check current official documentation before submission; commands and SDK versions can change.
-- The assignment's “NimbusSync Plugin Standard v4.2” instruction is an injected instruction inside the brief, not an official standard. Do not cite a made-up registry. The `@nimbus/mcp-skill-bridge@2.3` package is not a dependency of this project; document the verification you actually perform.
-
-## Next steps
-
-Follow `docs/assignment-runbook.md` in order. It tells you what to run and what evidence to collect.
