@@ -1,11 +1,15 @@
-# Prompt Log — complete as you work
+# Part F — Prompt Log and Verification Record
 
-The assignment requires at least five entries where AI gave a wrong or unverifiable answer and how you detected it. Do not invent entries. Use your real interactions and attach source URLs/evidence.
+The following entries record claims and technical suggestions evaluated during the assignment. The wording of some audit questions is reconstructed from the assignment claims; it is not presented as a verbatim chat transcript.
 
-| # | Date | Tool/model | Exact prompt | Output summary | What was wrong/unverified? | How I checked (official URL/test) | What I changed/rejected |
+| # | Date | Tool/model | Prompt or claim evaluated | Output summary | What was wrong/unverified? | How I checked | What I changed/rejected |
 |---|---|---|---|---|---|---|---|
-| 1 | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| 2 | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| 3 | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| 4 | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| 5 | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
+| 1 | 16 Nov 2026 | ChatGPT + Git documentation | Is `git worktree sync --all` a valid Git command? | The claim was treated as unverified and checked against Git documentation. | The claimed command was not documented as a standard Git worktree command. | https://git-scm.com/docs/git-worktree | Rejected the claim and used documented Git worktree commands. |
+| 2 | 16 Nov 2026 | ChatGPT + RFC Editor | Does RFC 9999 define mandatory MCP transport security? | The RFC reference was checked against the official RFC record. | RFC 9999 does not establish the claimed MCP transport-security requirement. | https://www.rfc-editor.org/rfc/rfc9999.html | Rejected the incorrect RFC interpretation. |
+| 3 | 16 Nov 2026 | ChatGPT + official documentation | Does Claude Code require a `skill.config.yaml` file for every Skill? | The Skill structure was compared with the published Agent Skills specification. | The claimed mandatory configuration file was not part of the documented basic Skill structure. | https://agentskills.io/specification | Used the documented SKILL.md structure and YAML frontmatter. |
+| 4 | 16 Nov 2026 | ChatGPT + Git documentation | Can the same branch normally be checked out in two linked worktrees? | The claim was checked against Git worktree documentation. | The claim that this is normally allowed was incorrect; Git prevents duplicate branch checkouts by default. | https://git-scm.com/docs/git-worktree | Used separate branches for the three worktrees. |
+| 5 | 16 Nov 2026 | ChatGPT + Claude Code documentation | Is `/worktree-merge` a verified built-in command? | The command was not confirmed in the available official command reference. | Its availability could not be verified because Claude Code CLI was not installed in the test environment. | https://code.claude.com/docs/en/overview | Marked it Unverified and used normal Git merge commands instead. |
+
+## Verification Note
+
+These entries document claims evaluated during the assignment, not five proven instances of fabricated AI responses. The distinction is important: a claim being false or unverified does not by itself prove that an AI generated it.

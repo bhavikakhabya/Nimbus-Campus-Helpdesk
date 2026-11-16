@@ -1,9 +1,17 @@
-# Part F — Reflection (edit to ~300 words and make it your own)
+# Part F — Reflection
 
-Skills, plugins, MCP, and Git worktrees solve different layers of an agent-enabled development workflow. A Skill packages reusable domain instructions and reference material, so an agent can follow a consistent method for a task such as answering timetable questions. A plugin is a distribution unit that can bundle Skills with commands, hooks, and MCP configuration so a team can install related capabilities together. MCP provides a standard way for an AI application to discover and call external tools or read resources; in this project it connects the agent to mock timetable and fee tools and a hostel-rules resource. Git worktrees solve a collaboration problem rather than an agent-knowledge or tool-connection problem: they let several branches have separate working directories while sharing one repository's Git data.
+## What I Learned
 
-I would choose a Skill when the main need is procedural guidance, domain rules, examples, or safe handling instructions. I would choose an MCP tool when the agent needs a well-defined operation or current data from an external system, with explicit inputs and outputs. In practice they can complement each other: the Skill can explain when and how to call an MCP tool, while the tool performs the lookup.
+This assignment helped me understand how Skills, plugins, MCP servers, and Git worktrees support different parts of an AI-agent development workflow.
 
-I would not delegate consequential actions without review. Examples include changing official student records, accessing or disclosing real fee information, deleting files, running unreviewed shell commands, installing unknown plugins, or merging code into a protected branch. An agent can make a plausible but incorrect assumption, follow hostile instructions embedded in data, or misunderstand a conflict. Human review, least privilege, mock data, tests, and an auditable prompt log reduce these risks.
+A Skill provides reusable instructions and reference material that guide an agent through a particular task. In my project, the timetable-helper Skill explains how timetable information should be checked and why missing classes must never be invented. A plugin packages related capabilities, such as Skills, commands, hooks, and MCP configuration. MCP allows an AI application to communicate with external tools and resources through a standard protocol. I implemented timetable and fee-status tools and a hostel-rules resource using mock data.
 
-**Personalise this reflection:** add what actually happened during your Skill trigger tests, MCP Inspector session, plugin review, and worktree conflict. Keep it close to 300 words and do not claim tests you did not run.
+The MCP Inspector session was especially useful because I could see the server initialization, tool discovery, resource listing, and actual tool calls. It helped me understand JSON-RPC communication beyond just reading code.
+
+Git worktrees taught me how multiple branches can have separate working directories while sharing repository history. I created three worktrees for Skill testing, MCP development, and hook-path work. I also deliberately created and resolved merge conflicts. This showed me why inspecting conflict markers and reviewing the final file is important.
+
+I learned that AI-generated answers should not automatically be trusted. Technical claims, commands, package names, and security requirements need verification through official documentation or actual tests. I also learned that prompt injection and unsafe shell hooks can create risks if an agent is given excessive permissions.
+
+One limitation was that Claude Code CLI was not installed in my environment. Therefore, I could test the hook script manually and inspect the plugin configuration, but I could not claim a live plugin installation or automatic Skill activation.
+
+Overall, this assignment improved my understanding of agent architecture, tool integration, verification, security, and collaborative Git workflows. My biggest takeaway is that AI can assist development, but testing, evidence, and human review remain essential.
