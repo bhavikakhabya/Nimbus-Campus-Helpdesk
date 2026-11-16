@@ -1,2 +1,4 @@
 Shared baseline line
-Resolved: Skill testing and MCP server workstreams are both documented.
+Skill branch: Timetable-helper testing documentation.
+MCP branch: MCP server implementation and testing documentation.
+Resolved: Both workstreams are successfully integrated into the main branch.
