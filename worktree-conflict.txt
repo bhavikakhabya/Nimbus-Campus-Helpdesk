@@ -1,1 +1,2 @@
 Shared baseline line
+Resolved: Skill testing and MCP server workstreams are both documented.
