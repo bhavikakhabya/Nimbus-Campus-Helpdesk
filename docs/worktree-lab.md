@@ -1,62 +1,124 @@
-# Part E — Git Worktree Lab
+# Part E — Git Worktree Lab Execution Report
 
-Run these commands from the repository root. Start from a clean working tree and commit the current project first. Do not run all commands blindly; read each step.
+## 1. Initial Commit
 
-## 1. Commit a baseline
+The project was committed on the main branch.
+
+- Initial commit: 49cbaab
+- Message: Initial commit: Nimbus Campus Helpdesk project
+
+## 2. Worktrees Created
+
+Three linked worktrees were created:
+
+| Worktree | Branch |
+|---|---|
+| Nimbus-Skill-Tests | feature/skill-tests |
+| Nimbus-MCP-Server | feature/mcp-server |
+| Nimbus-Hook-Path | bugfix/hook-path |
+
+Commands:
 
 ```bash
+git worktree add ../Nimbus-Skill-Tests -b feature/skill-tests
+git worktree add ../Nimbus-MCP-Server -b feature/mcp-server
+git worktree add ../Nimbus-Hook-Path -b bugfix/hook-path
+git worktree list3. Independent Workstream Commits
+Branch	Commit	Description
+feature/skill-tests	224220f	Skill test workstream documentation
+feature/mcp-server	5c28cb4	MCP server workstream documentation
+bugfix/hook-path	7436f4f	Hook path workstream documentation
+
+4. Deliberate Merge Conflict and Resolution
+A common file named worktree-conflict.txt was created on main.
+
+The Skill branch and MCP branch independently created a file with the same name but different contents. Git reported an add/add conflict while merging the Skill branch.
+
+The first conflict was manually resolved and committed:
+- Commit: 007a849
+- Message: Resolve worktree merge conflict
+A second add/add conflict occurred while merging the MCP branch. It was manually resolved by preserving the contributions from both workstreams.
+- Commit: f1c5638
+- Message: Resolve MCP and skill worktree merge conflict
+Final resolved file:
+Shared baseline line
+Skill branch: Timetable-helper testing documentation.
+MCP branch: MCP server implementation and testing documentation.
+Resolved: Both workstreams are successfully integrated into the main branch.
+
+
+5. Git Verification
+Commands used:
 git status
-git add .
-git commit -m "Create campus helpdesk assignment starter"
-```
-
-If Git asks for identity, configure your own name/email locally before committing.
-
-## 2. Create three branches and linked worktrees
-
-```bash
-git branch feature/skill-tests
-git branch feature/mcp-server
-git branch bugfix/hook-path
-mkdir -p ../Nimbus-worktrees
-git worktree add ../Nimbus-worktrees/skill-tests feature/skill-tests
-git worktree add ../Nimbus-worktrees/mcp-server feature/mcp-server
-git worktree add ../Nimbus-worktrees/hook-path bugfix/hook-path
+git log --oneline --all --graph
 git worktree list
-```
 
-## 3. Make independent changes
 
-In `../Nimbus-worktrees/skill-tests`, append a unique line to `docs/parallel-notes.md` and commit it. In `../Nimbus-worktrees/mcp-server`, append a different unique line to the same file and commit it. In `../Nimbus-worktrees/hook-path`, create `docs/hook-path-note.md` and commit it. Create the shared file in each branch if needed, with the same first line so the next step conflicts.
+Results:
+- Main working tree was clean.
+- Skill and MCP branches were merged into main.
+- Both conflict-resolution commits appeared in Git history.
+- All three original worktrees remained registered.
+- The hook-path branch remained separate and was not merged into main.
+6. Shared and Separate Worktree Data
+Linked worktrees share the repository's Git object database and repository history.
 
-## 4. Deliberately create and resolve a conflict
+Each worktree has its own working directory and index. This allows different branches to be checked out and edited independently.
 
-A reliable method: on `feature/skill-tests`, edit the same line in `docs/parallel-notes.md` to `Decision: timetable tests validated.` and commit. On `feature/mcp-server`, edit that exact same line to `Decision: MCP server validated.` and commit. Then merge one branch into the other from the skill-tests worktree:
+Uncommitted changes in one worktree do not automatically appear in another. Local environments and generated files may also need separate setup.
+7. Why Git Blocks the Same Branch in Multiple Worktrees
+Git normally prevents the same branch from being checked out in multiple linked worktrees simultaneously. This avoids multiple working directories independently modifying the same branch reference.
+8. Worktree Cleanup
+A temporary worktree was created and removed successfully.
 
-```bash
+Commands used:
+git worktree add ../Nimbus-Temp-Worktree -b temp/worktree-cleanup
+git worktree remove ../Nimbus-Temp-Worktree
+git branch -d temp/worktree-cleanup
+git worktree prune --dry-run
+
+
+The temporary worktree and branch were removed. The prune dry-run completed without reporting stale entries.
+
+git worktree remove removes a registered worktree. git worktree prune cleans stale administrative metadata.
+9. Evaluation of /worktree-merge
+Status: Unverified in this environment.
+
+The exact command was not verified against an official command reference. Claude Code CLI was not installed in the test environment, so command availability could not be tested directly.
+
+Normal Git merge commands were used instead:
+git merge feature/skill-tests
 git merge feature/mcp-server
-```
 
-Git should report a conflict if both branches changed the same line differently. Open the conflicted file, inspect both changes, choose or combine the correct wording, remove conflict markers, then:
+7. Why Git Blocks the Same Branch in Multiple Worktrees
+Git normally prevents the same branch from being checked out in multiple linked worktrees simultaneously. This avoids multiple working directories independently modifying the same branch reference.
+8. Worktree Cleanup
+A temporary worktree was created and removed successfully.
 
-```bash
-git add docs/parallel-notes.md
-git commit -m "Resolve parallel worktree conflict"
-git log --graph --oneline --decorate --all
-```
+Commands used:
+git worktree add ../Nimbus-Temp-Worktree -b temp/worktree-cleanup
+git worktree remove ../Nimbus-Temp-Worktree
+git branch -d temp/worktree-cleanup
+git worktree prune --dry-run
 
-If you do not get a conflict, stop and inspect the file histories; do not claim a conflict was resolved.
 
-## 5. Conceptual answers
+The temporary worktree and branch were removed. The prune dry-run completed without reporting stale entries.
 
-- **Why same branch is blocked:** Git normally prevents one branch from being checked out in multiple linked worktrees at the same time, avoiding simultaneous working-directory changes to the same branch reference.
-- **Shared vs separate:** linked worktrees share the repository's Git object database and refs/metadata managed by the common repository, while each has its own working directory and index. Untracked files, build outputs, `node_modules`, and local environment files are not automatically shared; each worktree may need its own install/configuration.
-- **Stale cleanup:** inspect `git worktree list`; confirm the directory is truly disposable; use `git worktree remove <path>` for a valid worktree, then `git worktree prune` only to clean stale administrative entries. Avoid deleting directories blindly.
+git worktree remove removes a registered worktree. git worktree prune cleans stale administrative metadata.
+9. Evaluation of /worktree-merge
+Status: Unverified in this environment.
 
-## 6. Evaluate `/worktree-merge`
+The exact command was not verified against an official command reference. Claude Code CLI was not installed in the test environment, so command availability could not be tested directly.
 
-Search current official Claude Code documentation/command reference for this exact built-in command. Record the official URL and access date. If you cannot find it in official docs, label it Unverified/not documented rather than claiming it exists. Even when an agent assists with a merge, inspect the diff, tests, conflict resolution, and commit before accepting it.
-
-## Evidence checklist
-
-Save terminal screenshots or copied outputs for `git worktree list`, the conflict markers before resolution, the resolved file, and `git log --graph --oneline --decorate --all`.
+Normal Git merge commands were used instead:
+git merge feature/skill-tests
+git merge feature/mcp-server
+Both conflicts were inspected, manually resolved, staged, and committed.
+10. Evidence Collected
+- Worktree list output
+- Git commit graph
+- Conflict markers before resolution
+- Resolved conflict file
+- Clean Git status
+- Temporary worktree cleanup commands
+  WORKTREE_DOC
