@@ -1,0 +1,17 @@
+{
+  "description": "Protects the project's data folder from accidental writes.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/protect-data.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

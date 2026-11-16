@@ -1,0 +1,5 @@
+{
+  "STU1001": {"status": "Paid", "amount_due": 0, "currency": "INR", "note": "Mock record for assignment testing"},
+  "STU1002": {"status": "Pending", "amount_due": 12500, "currency": "INR", "note": "Mock record for assignment testing"},
+  "STU1003": {"status": "Partially paid", "amount_due": 5000, "currency": "INR", "note": "Mock record for assignment testing"}
+}

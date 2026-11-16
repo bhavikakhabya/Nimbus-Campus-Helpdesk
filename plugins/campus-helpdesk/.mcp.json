@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "nimbus-campus": {
+      "command": "python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/../../mcp-server/server.py"],
+      "env": {"NIMBUS_PROJECT_ROOT": "${CLAUDE_PLUGIN_ROOT}/../.."}
+    }
+  }
+}

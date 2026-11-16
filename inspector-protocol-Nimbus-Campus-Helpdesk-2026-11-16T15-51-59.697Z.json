@@ -1,0 +1,329 @@
+[
+  {
+    "id": "5ac3d5df-51f8-4783-8521-5cd3fdddae31",
+    "timestamp": "2026-11-16T15:45:06.199Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "sampling": {},
+          "elicitation": {
+            "form": {},
+            "url": {}
+          },
+          "roots": {
+            "listChanged": true
+          },
+          "tasks": {
+            "list": {},
+            "cancel": {},
+            "requests": {
+              "sampling": {
+                "createMessage": {}
+              },
+              "elicitation": {
+                "create": {}
+              }
+            }
+          },
+          "extensions": {
+            "io.modelcontextprotocol/tasks": {},
+            "io.modelcontextprotocol/ui": {
+              "mimeTypes": [
+                "text/html;profile=mcp-app"
+              ],
+              "elicitation": {}
+            },
+            "io.modelcontextprotocol/skills": {}
+          }
+        },
+        "clientInfo": {
+          "name": "mcp-inspector",
+          "version": "2.13.0"
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 0
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 0,
+      "result": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "prompts": {
+            "listChanged": false
+          },
+          "resources": {
+            "subscribe": false,
+            "listChanged": false
+          },
+          "tools": {
+            "listChanged": false
+          }
+        },
+        "serverInfo": {
+          "name": "nimbus-campus-helpdesk",
+          "version": "1.30.0"
+        }
+      }
+    },
+    "duration": 510
+  },
+  {
+    "id": "ca08da1d-0990-4861-931e-2b520fd690e2",
+    "timestamp": "2026-11-16T15:45:06.719Z",
+    "direction": "notification",
+    "origin": "client",
+    "message": {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    }
+  },
+  {
+    "id": "e888617a-38a4-436f-9390-d067f27f9384",
+    "timestamp": "2026-11-16T15:45:06.745Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "resources/list",
+      "jsonrpc": "2.0",
+      "id": 1,
+      "params": {
+        "_meta": {
+          "progressToken": 1
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "resources": [
+          {
+            "name": "hostel_rules",
+            "uri": "hostel://rules",
+            "description": "Read the fictional hostel rules document supplied with this assignment.",
+            "mimeType": "text/plain"
+          }
+        ]
+      }
+    },
+    "duration": 98
+  },
+  {
+    "id": "b7d2545a-8ef2-4f64-8641-ca772f4579c6",
+    "timestamp": "2026-11-16T15:45:06.746Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/list",
+      "jsonrpc": "2.0",
+      "id": 2,
+      "params": {
+        "_meta": {
+          "progressToken": 2
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "tools": [
+          {
+            "name": "get_timetable",
+            "description": "Return classes listed in the mock timetable for an exact batch and weekday. Never infer missing classes.",
+            "inputSchema": {
+              "properties": {
+                "batch": {
+                  "title": "Batch",
+                  "type": "string"
+                },
+                "day": {
+                  "title": "Day",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "batch",
+                "day"
+              ],
+              "title": "get_timetableArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "get_fee_status",
+            "description": "Return a fictional fee-status record for a mock student ID (STU1001-STU1003); do not use real student data.",
+            "inputSchema": {
+              "properties": {
+                "student_id": {
+                  "title": "Student Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "student_id"
+              ],
+              "title": "get_fee_statusArguments",
+              "type": "object"
+            }
+          }
+        ]
+      }
+    },
+    "duration": 126
+  },
+  {
+    "id": "40dc12af-55cf-4c08-9935-ad3e60209001",
+    "timestamp": "2026-11-16T15:45:06.746Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "prompts/list",
+      "jsonrpc": "2.0",
+      "id": 3,
+      "params": {
+        "_meta": {
+          "progressToken": 3
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "prompts": []
+      }
+    },
+    "duration": 142
+  },
+  {
+    "id": "4ad57a81-f5de-4782-aace-2cf1cd78395d",
+    "timestamp": "2026-11-16T15:45:06.747Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "resources/templates/list",
+      "jsonrpc": "2.0",
+      "id": 4,
+      "params": {
+        "_meta": {
+          "progressToken": 4
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": {
+        "resourceTemplates": []
+      }
+    },
+    "duration": 160
+  },
+  {
+    "id": "7faa0fa9-7aaa-445c-a2f7-fd5fd74803a2",
+    "timestamp": "2026-11-16T15:47:22.383Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/list",
+      "params": {
+        "_meta": {
+          "progressToken": 5
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 5
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "result": {
+        "tools": [
+          {
+            "name": "get_timetable",
+            "description": "Return classes listed in the mock timetable for an exact batch and weekday. Never infer missing classes.",
+            "inputSchema": {
+              "properties": {
+                "batch": {
+                  "title": "Batch",
+                  "type": "string"
+                },
+                "day": {
+                  "title": "Day",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "batch",
+                "day"
+              ],
+              "title": "get_timetableArguments",
+              "type": "object"
+            }
+          },
+          {
+            "name": "get_fee_status",
+            "description": "Return a fictional fee-status record for a mock student ID (STU1001-STU1003); do not use real student data.",
+            "inputSchema": {
+              "properties": {
+                "student_id": {
+                  "title": "Student Id",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "student_id"
+              ],
+              "title": "get_fee_statusArguments",
+              "type": "object"
+            }
+          }
+        ]
+      }
+    },
+    "duration": 55
+  },
+  {
+    "id": "673c563f-29f6-4843-aa6b-759e0a988dcf",
+    "timestamp": "2026-11-16T15:51:18.916Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/call",
+      "params": {
+        "name": "get_timetable",
+        "arguments": {
+          "batch": "CSE-A",
+          "day": "Monday"
+        },
+        "_meta": {
+          "progressToken": 6
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 6
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"batch\": \"CSE-A\",\n  \"day\": \"Monday\",\n  \"count\": 3,\n  \"classes\": [\n    {\n      \"batch\": \"CSE-A\",\n      \"day\": \"Monday\",\n      \"start_time\": \"09:00\",\n      \"end_time\": \"10:00\",\n      \"course\": \"Python Programming\",\n      \"faculty\": \"Prof. Sharma\",\n      \"room\": \"Lab-01\"\n    },\n    {\n      \"batch\": \"CSE-A\",\n      \"day\": \"Monday\",\n      \"start_time\": \"10:00\",\n      \"end_time\": \"11:00\",\n      \"course\": \"Mathematics\",\n      \"faculty\": \"Prof. Mehta\",\n      \"room\": \"Room-201\"\n    },\n    {\n      \"batch\": \"CSE-A\",\n      \"day\": \"Monday\",\n      \"start_time\": \"11:15\",\n      \"end_time\": \"12:15\",\n      \"course\": \"Computer Fundamentals\",\n      \"faculty\": \"Prof. Patel\",\n      \"room\": \"Room-202\"\n    }\n  ],\n  \"data_notice\": \"Fictional assignment sample data; not an official university timetable.\"\n}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    "duration": 52
+  }
+]

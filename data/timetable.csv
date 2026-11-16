@@ -1,0 +1,18 @@
+batch,day,start_time,end_time,course,faculty,room
+CSE-A,Monday,09:00,10:00,Python Programming,Prof. Sharma,Lab-01
+CSE-A,Monday,10:00,11:00,Mathematics,Prof. Mehta,Room-201
+CSE-A,Monday,11:15,12:15,Computer Fundamentals,Prof. Patel,Room-202
+CSE-A,Tuesday,09:00,10:00,Web Development,Prof. Shah,Lab-02
+CSE-A,Tuesday,10:00,11:00,Python Programming,Prof. Sharma,Lab-01
+CSE-A,Wednesday,09:00,10:00,Database Management,Prof. Joshi,Room-203
+CSE-A,Wednesday,10:00,11:00,Mathematics,Prof. Mehta,Room-201
+CSE-A,Thursday,09:00,10:00,Web Development,Prof. Shah,Lab-02
+CSE-A,Thursday,10:00,11:00,Computer Fundamentals,Prof. Patel,Room-202
+CSE-A,Friday,09:00,10:00,Python Programming,Prof. Sharma,Lab-01
+CSE-A,Friday,10:00,11:00,Database Management,Prof. Joshi,Room-203
+CSE-B,Monday,09:00,10:00,Mathematics,Prof. Mehta,Room-204
+CSE-B,Monday,10:00,11:00,Python Programming,Prof. Sharma,Lab-03
+CSE-B,Tuesday,09:00,10:00,Database Management,Prof. Joshi,Room-205
+CSE-B,Wednesday,09:00,10:00,Web Development,Prof. Shah,Lab-04
+CSE-B,Thursday,10:00,11:00,Mathematics,Prof. Mehta,Room-204
+CSE-B,Friday,09:00,10:00,Computer Fundamentals,Prof. Patel,Room-206

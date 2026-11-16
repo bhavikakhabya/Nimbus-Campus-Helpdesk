@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "nimbus-campus-marketplace",
+  "description": "Campus Helpdesk plugin marketplace",
+  "owner": {
+    "name": "Student Project"
+  },
+  "plugins": [
+    {
+      "name": "campus-helpdesk",
+      "source": "./plugins/campus-helpdesk",
+      "description": "Campus timetable assistance with a Skill, custom command, safety hook and MCP connection."
+    }
+  ]
+}

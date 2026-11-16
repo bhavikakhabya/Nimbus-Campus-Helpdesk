@@ -1,0 +1,6 @@
+{
+  "name": "campus-helpdesk",
+  "version": "1.0.0",
+  "description": "A demonstration campus helpdesk plugin with timetable guidance, a safety hook, a slash command, and an MCP server connection.",
+  "author": {"name": "Student Project"}
+}
