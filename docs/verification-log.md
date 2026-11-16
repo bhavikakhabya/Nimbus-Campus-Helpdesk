@@ -146,3 +146,20 @@ https://arxiv.org/
 
 Accessed: 16 November 2026
 
+
+## Package Verification: @nimbus/mcp-skill-bridge
+
+Date: 16 November 2026
+
+Command executed:
+
+npm view @nimbus/mcp-skill-bridge@2.3.0 version
+
+Result:
+- npm returned E404 Not Found.
+- The public npm registry did not return the requested package/version.
+- Package status: Not found on the public npm registry; global non-existence is not established.
+- No installation was performed.
+- The project uses the official Python MCP SDK package `mcp` instead.
+
+This result is recorded as verification evidence, not as proof that the package cannot exist in a private registry.
