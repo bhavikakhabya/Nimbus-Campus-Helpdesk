@@ -13,3 +13,8 @@ The following entries record claims and technical suggestions evaluated during t
 ## Verification Note
 
 These entries document claims evaluated during the assignment, not five proven instances of fabricated AI responses. The distinction is important: a claim being false or unverified does not by itself prove that an AI generated it.
+
+
+| 6 | 16 Nov 2026 | ChatGPT + Git Terminal | Will merging `feature/skill-tests` into `main` complete without conflicts? | ChatGPT predicted that the merge should complete normally. | Git returned an `add/add` merge conflict in `worktree-conflict.txt` because both branches had different versions of the same file. | Executed `git merge feature/skill-tests` and inspected the conflict using `cat worktree-conflict.txt`. | Rejected the initial prediction, inspected the conflict markers, manually combined the content, and committed the resolution as `007a849`. |
+
+One additional example records an incorrect AI prediction during the Git merge exercise. The actual terminal output was used to identify the error, resolve the conflict, and verify the final commit.
